@@ -1,0 +1,655 @@
+<html>
+
+  <head>
+    <title>BMSMILE</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="기업이야기">
+    <meta property="og:description" content="비엠스마일의 기업소개-기업이야기">
+    <link rel="icon" type="image/png" href="./img/logo.png">
+
+    <meta name="description" content="비엠스마일 회사소개" />
+    <meta name="keywords" content="비엠스마일,회사소개,포트폴리오,강아지기업" />
+    <meta name="author" content="임은경" />
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="./css/layout.css" />
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <link rel="stylesheet" type="text/css" href="./css/common.css" />
+    <link rel="stylesheet" type="text/css" href="./css/font.css" />
+
+    <!-- 슬라이드 -->
+    <link rel="stylesheet" type="text/css" href="./css/swiper.css" />
+    <script type="text/javascript" src="./js/swiper.min.js"></script>
+  </head>
+
+  <body>
+    <!--********************* 헤더********************************** -->
+    <header id="header">
+      <h1 class="logo">
+        <a href="#">
+          <img src="./img/logo.png" srcset="./img/logo@2x.png 2x, ./img/logo@3x.png 3x, ./img/logo@4x.png 4x">
+        </a>
+      </h1>
+      <div class="menu">
+        <ul>
+          <li class="menu_story on"><a href="#">기업이야기</a></li>
+          <li class="menu_promise"><a href="./sub/promise.html">약속</a></li>
+          <li class="menu_career"><a href="./sub/career.html">채용</a></li>
+          <li class="menu_news"><a href="./sub/news.html">뉴스</a></li>
+        </ul>
+        <div class="unberline"></div>
+      </div>
+      <a class="menu-trigger" href="#">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+    </header>
+
+    <script>
+
+      $(function() {
+
+
+        // 헤더 메뉴 아래 밑줄
+        $('#header ul li a').mouseenter(function() {
+            var pointer = $(".unberline");
+            var thisleft = $(this).position().left;
+            var pointerWidth = $(this).outerWidth();
+
+            pointer.stop().animate({
+              left: thisleft,
+              width: pointerWidth
+            }, 300);
+          })
+          .mouseleave(function() {
+            var pointer = $(".unberline");
+            // 현재페이지 표시
+            var pageA = $("#header .menu .on a");
+            var pointerWidth = pageA.outerWidth();
+            var thisleft = pageA.position().left;
+
+            pointer.stop().animate({
+              left: thisleft,
+              width: pointerWidth
+            }, 300);
+          });
+
+
+        // 화면 사이즈 바뀔때 밑줄 크기 바뀜
+        $(window).resize(function() {
+
+          var pointer = $(".unberline");
+          var hasOn = $("#header ul .on a");
+          var pointerWidth = hasOn.outerWidth();
+          var thisleft = hasOn.position().left;
+
+          pointer.stop().animate({
+            left: thisleft,
+            width: pointerWidth
+          }, 300);
+        });
+        $("#header .menu .on a").trigger('mouseenter');
+
+
+        // 스크롤 시 css바뀜
+        $(window).scroll(function() {
+          var headHeight = $("#header").height();
+          var mainPadding = $("#main").outerHeight();
+
+          if ($(this).scrollTop() > 10) {
+            $("#sub").css({
+              paddingTop: mainPadding
+            });
+            $("#header").addClass('on');
+          } else {
+            $("#sub").css({
+              paddingTop: 0
+            });
+            $("#header").removeClass('on');
+          }
+        });
+
+
+        // 햄버거
+        var burger = $('.menu-trigger');
+
+          burger.each(function(index){
+            var $this = $(this);
+
+            $this.on('click', function(e){
+              e.preventDefault();
+              $(this).toggleClass('active');
+              if(burger.hasClass("active")){
+                $("#header .menu").stop().animate({right:0});
+              }else{
+                $("#header .menu").stop().animate({right:'-350px'});
+              }
+
+            });
+          });
+
+      })
+
+    </script>
+    <!--********************************** 헤더 끝 **********************************-->
+
+
+
+
+
+    <!--********************************** 메인 **********************************-->
+    <section id="main">
+      <article class="main_swiper">
+        <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper_1">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide blue_bg3">
+              <div class="wrap">
+                <div class="text">
+                  <div data-swiper-parallax="-400" class="blue02">반려동물과 함께 웃는<br>
+                    삶을 꿈꾸는 기업, <br class="tablet"><b class="Montserrat">BMSMILE</b>
+                  </div>
+                  <p class="orange" data-swiper-parallax="-300">‘happy life of my pet’</p>
+                </div>
+                <img src="./img/main_swiper_bg01.png" alt="강아지와 고양이 포옹">
+              </div>
+            </div>
+            <div class="swiper-slide blue_bg3">
+              <div class="wrap">
+                <div class="text orange">
+                  <div data-swiper-parallax="-400">내 반려동물을<br>
+                    따스히 안아주는, <br class="tablet"><b class="Montserrat">BMSMILE</b>
+                  </div>
+                  <p class="blue02" data-swiper-parallax="-300">‘happy life of my pet’</p>
+                </div>
+                <img src="./img/main_swiper_bg02.png" alt="강아지와 고양이 포옹">
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </article>
+
+
+      <article class="our_story fadeBox2">
+        <div class="wrap">
+          <div class="title">
+            <p class="blue">비엠스마일</p>
+            <h2>our <b>story</b></h2>
+            <p class="summary">
+              비엠스마일은 반려동물에 대한 깊은 이해와 높은 전문성을 바탕으로<br>
+              최상의 제품 퀄리티와 최고의 서비스 마인드를 보유하고 있으며,<br>
+              이를 토대로 <b class="black">창립 2주년 만에 국내 반려동물 욕실용품 업계 선두 기업</b>으로 자리 잡았습니다.
+            </p>
+          </div>
+        </div>
+        <!-- 스와이프 -->
+        <div class="swiper-container mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide swiper01"></div>
+            <div class="swiper-slide swiper02"></div>
+            <div class="swiper-slide swiper03"></div>
+            <div class="swiper-slide swiper04"></div>
+            <div class="swiper-slide swiper05"></div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </article>
+
+
+      <article class="our_brand blue_bg2">
+        <div class="wrap">
+          <div class="title fadeBox">
+            <p class="blue">비엠스마일</p>
+            <h2>our <b>brand</b></h2>
+          </div>
+          <ul class="overflow fadeBox">
+            <li class="float_left brand">
+              <a href="https://www.pethroom.com" target="_blank">
+                <div class="image background">
+                  <h5 class="blue_bg yellow">PETHROOM</h5>
+                </div>
+                <div class="text">
+                  <h4 class="blue">반려동물의 즐거운 욕실 라이프스타일</h4>
+                  <p>
+                    감동적인 '페스룸'의 철학, 그것을 일관성 있게 표현하는<br>
+                    디자인,전문적이고 우수한 제품력, 친근하고 진정성 있는 소통,<br>
+                    <b class="black">사람들이 페스룸에 열광하는 이유</b>입니다.
+                  </p>
+                </div>
+              </a>
+            </li>
+            <li class="float_right bossalex">
+              <a href="https://www.youtube.com/channel/UCPEBG_GeBhoZb0dvB0WjJlw/about" target="_blank">
+                <div class="image background">
+                  <h5 class="yellow_bg blue">BOSS AND ALEX</h5>
+                </div>
+                <div class="text">
+                  <h4 class="blue">나와 내 반려동물의 편안한 라이프스타일 </h4>
+                  <p>
+                    보스앤알렉스는 반려동물과 반려인 라이프 스타일 전반을<br>
+                    아우르는 브랜드로 보스와 알렉스가 하나의 수평적인<br>
+                    가족 <b class="black">구성원으로 한공간에서 함께 살아가는 집</b>입니다.
+                  </p>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </article>
+
+
+      <article class="main_ci">
+        <ul class="overflow">
+          <li class="float_left yellow_bg tablet2">
+            <img src="./img/ci.png" alt="ci 그림">
+          </li>
+          <li class="float_left">
+            <div class="fadeBox">
+              <div class="title">
+                <p class="blue">비엠스마일</p>
+                <h2>COMPANY <b>IDENTITY</b></h2>
+                <img src="./img/ci.png" alt="ci 그림" class="tablet">
+                <p class="summary">
+                  비엠스마일은 강아지 소리의 ‘Bark’와 고양이 소리의 ‘Meow’에서 착안하였습니다.<br>
+                  Bark Meow SMILE, 강아지와 고양이를 웃게 만드는 기업,<br>
+                  <b class="black">강아지와 고양이가 우리를 웃게 만든다는 의미입니다.</b>
+                </p>
+              </div>
+              <div class="text">
+                반려동물이 우리를 웃음짓게 하기도 하지만,<br>
+                그들도 우리로 인해 웃음 지을 수 있게 하자는 의미로,<br>
+                반려동물을 가족, <b class="black">즉 하나의 인격체</b>로 생각합니다.
+              </div>
+            </div>
+          </li>
+        </ul>
+      </article>
+
+
+      <article class="history fadeBox">
+        <div class="wrap">
+          <ul class="overflow">
+            <li class="float_left">
+              <div class="title">
+                <p class="blue">비엠스마일</p>
+                <h2>OUR <b>HISTORY</b></h2>
+              </div>
+              <div class="tablet2">
+                반려동물과 그들을 사랑하는 사람들의<br>
+                풍족하고 행복한 삶을 실현하기 위해<br>
+                계속해서 나아가고 있습니다.
+              </div>
+              <div class="tablet">
+                반려동물과 그들을 사랑하는 사람들의 풍족하고 행복한 삶을 <br>
+                실현하기 위해 계속해서 나아가고 있습니다.
+              </div>
+            </li>
+            <li class="float_left">
+              <div>
+                <table class="history_list">
+                  <tr>
+                    <th rowspan='2'>
+                      <div>2020</div>
+                    </th>
+                    <td>
+                      <h5>(페펨)설립</h5>
+                      반려동물을 가족으로 생각한다는 의미를<br> 가진 ㈜페펨을 설립하였습니다.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <h5>국내 박람회를 통한 제품 런칭</h5>
+                      두 번의 박람회를 통해 비엠스마일의 초기 <br>제품을 고객들의 큰 호응과 함께 <br>성공적으로 런칭하였습니다.
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <div>
+                <table class="history_list">
+                  <tr>
+                    <th rowspan='3'>
+                      <div>2019</div>
+                    </th>
+                    <td>
+                      <h5>유럽 박람회 진출</h5>
+                      영국 반려동물 산업 박람회 ‘PATS’에 진출해<br>
+                      영국 매거진 ‘ THE WEEKEND PAGES’에 소개되
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <h5>PETHROOM HEALING BRUSH 런칭</h5>
+                      커버캡 형태의 실리콘 브러쉬를 국내 최초로<br>
+                      런칭했습니다.<br>
+                      디자인등록 : 30-2019-0047239<br>
+                      실용신안 : 20-2019-0004649
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <h5>모건네트웍스 협업
+                      </h5>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <div>
+                <table class="history_list">
+                  <tr>
+                    <th rowspan='2'>
+                      <div>2018</div>
+                    </th>
+                    <td>
+                      <h5>BMSLIE 사명 변경</h5>
+                      비엠스마일의 비전과 미션을 담고, 글로벌 진출을 <br>
+                      통한 기반을 구축하기 위해 회사명을 비엠스마일로 <br>
+                      변경하였습니다.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <h5>연 매출 200억원 달성(연결기준)</h5>
+                      세계적으로 반려동물 사업 시장 규모가가장 큰 <br>
+                      미국 시장의 진출을 위해 미국 법인을 설립했습니다.<br>
+                      최고품질의 제품을 미국 소비자에게 효과적으로<br>
+                      전달하는데 핵심적인 역할을 수행할 것입니다.
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </article>
+
+
+      <article class="gloval">
+        <div class="title fadeBox">
+          <p class="blue">비엠스마일</p>
+          <h2><b>GLOVAL</b> EXPANSION</h2>
+          <p class="summary">
+            비엠스마일은 미국, 유럽, 중국, 일본 시장을 목표로 GLOBAL 반려동물 시장 진출을 위해<br>
+            끊임없이 노력하며, 비엠스마일의 가치를 전파하고 있습니다.
+          </p>
+        </div>
+        <div class="map background fadeBox">
+          <div class="us">
+            <p>미국</p><img src="./img/ping.png" srcset="./img/ping@2x.png 2x, ./img/ping@3x.png 3x, ./img/ping@4x.png 4x">
+          </div>
+          <div class="uk">
+            <p>영국</p><img src="./img/ping.png" srcset="./img/ping@2x.png 2x, ./img/ping@3x.png 3x, ./img/ping@4x.png 4x">
+          </div>
+          <div class="ko">
+            <p>한국</p><img src="./img/ping.png" srcset="./img/ping@2x.png 2x, ./img/ping@3x.png 3x, ./img/ping@4x.png 4x">
+          </div>
+          <div class="ja">
+            <p>일본</p><img src="./img/ping.png" srcset="./img/ping@2x.png 2x, ./img/ping@3x.png 3x, ./img/ping@4x.png 4x">
+          </div>
+        </div>
+      </article>
+
+      <!-- 팝업 -->
+      <div id="popup">
+        <div class="popup terms_popup">
+          <div class="pop_title">이용약관<span><img src="./img/close.png" srcset="./img/close@2x.png 2x, ./img/close@3x.png 3x, ./img/close@4x.png 4x"></span></div>
+          <div class="text">
+            제1장 총칙<br><br>
+            제1조(목적) 이 약관은 회사가 온라인으로 제공하는 디지털콘텐츠(이하 "콘텐츠"라고 한다) 및 제반서비스의 이용과 관련하여 회사와 이용자와의 권리, 의무 및 책임사항 등을 규정함을 목적으로 합니다.<br><br>
+            제2조(정의) 이 약관에서 사용하는 용어의 정의는 다음과 같습니다.<br><br>
+            1. "회사"라 함은 "콘텐츠" 산업과 관련된 경제활동을 영위하는 자로서 콘텐츠 및 제반서비스를 제공하는 자를 말합니다.<br><br>
+            2. "이용자"라 함은 "회사"의 사이트에 접속하여 이 약관에 따라 "회사"가 제공하는 "콘텐츠" 및 제반서비스를 이용하는 회원 및 비회원을 말합니다.<br><br>
+            3. "회원"이라 함은 "회사"와 이용계약을 체결하고 "이용자" 아이디(ID)를 부여받은 "이용자"로서 "회사"의 정보를 지속적으로 제공받으며 "회사"가 제공하는 서비스를 지속적으로 이용할 수 있는 자를 말합니다.<br><br>
+            4. "비회원"이라 함은 "회원"이 아니면서 "회사"가 제공하는 서비스를 이용하는 자를 말합니다.<br><br>
+            5. "콘텐츠"라 함은 정보통신망이용촉진 및 정보보호 등에 관한 법률 제2조 제1항 제1호의 규정에 의한 정보통신망에서 사용되는 부호·문자·음성·음향·이미지 또는 영상 등으로 표현된 자료 또는 정보로서, 그 보존 및 이용에 있어서 효용을 높일 수 있도록 전자적 형태로 제작 또는 처리된 것을 말합니다.<br><br>
+            6. "아이디(ID)"라 함은 "회원"의 식별과 서비스이용을 위하여 "회원"이 정하고 "회사"가 승인하는 문자 또는 숫자의 조합을 말합니다.<br><br>
+            7. "비밀번호(PASSWORD)"라 함은 "회원"이 부여받은 "아이디"와 일치되는 "회원"임을 확인하고 비밀보호를 위해 "회원" 자신이 정한 문자 또는 숫자의 조합을 말합니다.<br><br>
+            제3조(신원정보 등의 제공) "회사"는 이 약관의 내용, 상호, 대표자 성명, 영업소 소재지 주소(소비자의 불만을 처리할 수 있는 곳의 주소를 포함), 전화번호, 모사전송번호, 전자우편주소, 사업자등록번호, 통신판매업 신고번호 및 개인정보관리책임자 등을 이용자가 쉽게 알 수 있도록 온라인 서비스초기화면에 게시합니다. 다만, 약관은 이용자가 연결화면을 통하여 볼 수 있도록 할 수 있습니다.<br><br>
+            제4조(약관의 게시 등) ① "회사"는 이 약관을 "회원"이 그 전부를 인쇄할 수 있고 거래과정에서 해당 약관의 내용을 확인할 수 있도록 기술적 조치를 취합니다.<br><br>
+            ② "회사"는 "이용자"가 "회사"와 이 약관의 내용에 관하여 질의 및 응답할 수 있도록 기술적 장치를 설치합니다.<br><br>
+            ③ "회사"는 "이용자"가 약관에 동의하기에 앞서 약관에 정하여져 있는 내용 중 청약철회, 환불조건 등과 같은 중요한 내용을 이용자가 쉽게 이해할 수 있도록 별도의 연결화면 또는 팝업화면 등을 제공하여 "이용자"의 확인을 구합니다.<br><br>
+            제5조(약관의 개정 등) ① "회사"는 온라인 디지털콘텐츠산업 발전법, 전자상거래 등에서의 소비자보호에 관한 법률, 약관의 규제에 관한 법률 등 관련법을 위배하지 않는 범위에서 이 약관을 개정할 수 있습니다.<br><br>
+            ② "회사"가 약관을 개정할 경우에는 적용일자 및 개정사유를 명시하여 현행약관과 함께 서비스초기화면에 그 적용일자 7일 이전부터 적용일 후 상당한 기간동안 공지하고, 기존회원에게는 개정약관을 전자우편주소로 발송합니다.<br><br>
+            ③ "회사"가 약관을 개정할 경우에는 개정약관 공지 후 개정약관의 적용에 대한 "이용자"의 동의 여부를 확인합니다. "이용자"가 개정약관의 적용에 동의하지 않는 경우 "회사" 또는 "이용자"는 콘텐츠 이용계약을 해지할 수 있습니다. 이때, "회사"는 계약해지로 인하여 "이용자"가 입은 손해를 배상합니다.<br><br>
+            제6조(약관의 해석) 이 약관에서 정하지 아니한 사항과 이 약관의 해석에 관하여는 온라인 디지털콘텐츠산업 발전법, 전자상거래 등에서의 소비자보호에 관한 법률, 약관의 규제에 관한 법률, 문화체육관광부장관이 정하는 디지털콘텐츠이용자보호지침, 기타 관계법령 또는 상관례에 따릅니다.<br><br>
+          </div>
+        </div>
+
+        <div class="popup privacy_popup">
+          <div class="pop_title">개인정보처리방침<span><img src="./img/close.png" srcset="./img/close@2x.png 2x, ./img/close@3x.png 3x, ./img/close@4x.png 4x"></span></div>
+          <div class="text">
+            개인정보보호위원회가 취급하는 모든 개인정보는 관련 법령에 근거하여 수집 · 보유 및 처리되고 있습니다. 「개인정보보호법」은 이러한 개인정보의 취급에 대한 일반적 규범을 제시하고 있으며, 개인정보보호위원회는 이러한 법령의 규정에 따라 수집 · 보유 및 처리하는 개인정보를 공공업무의 적절한 수행과 이용자의 권익을 보호하기 위해 적법하고 적정하게 취급할 것입니다.<br><br>
+
+            또한, 개인정보보호위원회는 관련 법령에서 규정한 바에 따라 보유하고 있는 개인정보에 대한 열람, 정정·삭제, 처리정지 요구 등 이용자의 권익을 존중하며, 이용자는 이러한 법령상 권익의 침해 등에 대하여 행정심판법에서 정하는 바에 따라 행정심판을 청구할 수 있습니다.<br><br>
+
+            개인정보보호위원회는 개인정보보호법 제 30조에 따라 정보주체의 개인정보 보호 및 권익을 보호하고 개인정보와 관련한 이용자의 고충을 원활하게 처리할 수 있도록 다음과 같은 개인정보 처리방침을 수립 · 공개하고 있습니다.<br><br>
+          </div>
+        </div>
+
+        <div class="popup collection_popup">
+          <div class="pop_title">이메일 무단수집거부<span><img src="./img/close.png" srcset="./img/close@2x.png 2x, ./img/close@3x.png 3x, ./img/close@4x.png 4x"></span></div>
+          <div class="text">
+            개인정보처리자는 이 법에 따른 개인정보의 처리에 대하여 정보주체(제5항에 따른 법정대리인을 포함한다. <br><br>이하 이 조에서 같다)의 동의를 받을 때에는 각각의 동의 사항을 구분하여 정보주체가 이를 명확하게 인지할 수 있도록 알리고 각각 동의를 받아야 한다.<br><br>
+            개인정보처리자는 제15조제1항제1호, 제17조제1항제1호, 제23조제1호 및 제24조제1항제1호에 따라 개인정보의 처리에 대하여 정보주체의 동의를 받을 때에는 정보주체와의 계약 체결 등을 위하여 정보주체의 동의 없이 처리할 수 있는 개인정보와 정보주체의 동의가 필요한 개인정보를 구분하여야 한다. <br>이 경우 동의 없이 처리할 수 있는 개인정보라는 입증책임은 개인정보처리자가 부담한다.<br><br>
+            개인정보처리자는 정보주체에게 재화나 서비스를 홍보하거나 판매를 권유하기 위하여 개인정보의 처리에 대한 동의를 받으려는 때에는 정보주체가 이를 명확하게 인지할 수 있도록 알리고 동의를 받아야 한다.<br><br>
+            개인정보처리자는 정보주체가 제2항에 따라 선택적으로 동의할 수 있는 사항을 동의하지 아니하거나 제3항 및 제18조제2항제1호에 따른 동의를 하지 아니한다는 이유로 정보주체에게 재화 또는 서비스의 제공을 거부하여서는 아니 된다.<br><br>
+            개인정보처리자는 만 14세 미만 아동의 개인정보를 처리하기 위하여 이 법에 따른 동의를 받아야 할 때에는 그 법정대리인의 동의를 받아야 한다. <br>이 경우 법정대리인의 동의를 받기 위하여 필요한 최소한의 정보는 법정대리인의 동의 없이 해당 아동으로부터 직접 수집할 수 있다.<br><br>
+            제1항부터 제5항까지에서 규정한 사항 외에 정보주체의 동의를 받는 세부적인 방법 및 제5항에 따른 최소한의 정보의 내용에 관하여 필요한 사항은 개인정보의 수집매체 등을 고려하여 대통령령으로 정한다.
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <script>
+      $(function() {
+
+        $("body").animate({
+          opacity: 1
+        }, 800);
+        $(".fadeBox2").animate({
+          opacity: 1,
+          marginTop: 0
+        }, 800);
+
+        var swiper = new Swiper('.mySwiper_1', {
+          grabCursor: true,
+          speed: 500,
+          slidesPerView: '1',
+          spaceBetween: 0,
+          speed: 600,
+          parallax: true,
+          loop: true,
+          clickable: true,
+          autoplay: {
+            delay: 500000,
+            disableOnInteraction: false,
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          on: {
+            activeIndexChange: function() {
+
+              var realIndex = this.realIndex;
+              var headColor = $("#header").css("backgroundColor");
+              var slideColor = $(".swiper-slide").eq(realIndex).css("backgroundColor");
+              //
+              // headColor.css({backgroundColor:'#ff0000'});
+
+            }
+          },
+        });
+
+        var swiper = new Swiper('.mySwiper', {
+          slidesPerView: 3,
+          spaceBetween: 30,
+          centeredSlides: true,
+          loop: true,
+          effect: "coverflow",
+          coverflowEffect: {
+            rotate: 0,
+            stretch: 0,
+            depth: 120,
+            modifier: 1,
+            slideShadows: true,
+          },
+          autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+          breakpoints: {
+            1024: {
+              slidesPerView: 2,
+            },
+          },
+        });
+      })
+      // 스크롤시 페이드인
+      $(window).scroll(function() {
+        $('.fadeBox').each(function(i) {
+
+          var bottom_of_object = $(this).offset().top + 100;
+          var bottom_of_window = $(window).scrollTop() + $(window).height();
+
+          /* If the object is completely visible in the window, fade it it */
+          if (bottom_of_window > bottom_of_object) {
+
+            $(this).animate({
+              'opacity': '1',
+              'margin-top': "0"
+            }, 500);
+          }
+        });
+
+        // 팝업
+
+        $(".footer_top li").click(function(e) {
+          e.preventDefault();
+          if ($(this).hasClass("terms")) {
+            $(".terms_popup").show();
+          } else if ($(this).hasClass("privacy")) {
+            $(".privacy_popup").show();
+          } else {
+            $(".collection_popup").show();
+          }
+
+        });
+
+        $("#popup .pop_title span").click(function() {
+          $(this).parents(".popup").hide();
+        });
+      });
+
+    </script>
+
+
+
+    <!-- **********************************메인*끝********************************* -->
+    <!-- **********************************푸터********************************** -->
+
+    <footer id="footer">
+      <ul class="footer_top">
+        <li class="terms"><a href="#">이용약관</a></li>
+        <li class="privacy"><a href="#">개인정보처리방침</a></li>
+        <li class="collection"><a href="#">이메일 무단수집거부</a></li>
+      </ul>
+      <div class="footer_bottom">
+        <div class="wrap">
+          <div class="float_left">
+            <p>Follow us</p>
+            <ul>
+              <li>
+                <img src="./img/sns_instar.png" srcset="./img/sns_instar@2x.png 2x, ./img/sns_instar@3x.png 3x, ./img/sns_instar@4x.png 4x">
+              </li>
+              <li>
+                <img src="./img/sns_facebook.png" srcset="./img/sns_facebook@2x.png 2x, ./img/sns_facebook@3x.png 3x, ./img/sns_facebook@4x.png 4x">
+              </li>
+              <li>
+                <img src="./img/sns_youtube.png" srcset="./img/sns_youtube@2x.png 2x, ./img/sns_youtube@3x.png 3x, ./img/sns_youtube@4x.png 4x">
+              </li>
+            </ul>
+          </div>
+          <div class="text">
+            Company Name : BMSMILE Co., Ltd. 사업자등록번호 : 394-81-01000<br>
+            TEL : 010-5032-0316 주소 : 서울시 노원구 공릉동 EMAIL: ajfod126@gmail.com<br>
+            ⓒLim eunkyeong 2021.08
+          </div>
+          <div class="float_right">
+            <div class="list-unstyled">
+              <ul class="absol">
+                <li><a href="https://www.pethroom.com/" target="_blank">PETHROOM</a></li>
+                <li><a href="https://www.youtube.com/channel/UCPEBG_GeBhoZb0dvB0WjJlw/about" target="_blank">BOSS AND ALEX</a></li>
+              </ul>
+              <a href="#">FAMILY SITE</a>
+            </div>
+            <ul class="translation">
+              <li>
+                <a href="#">
+                  <img src="./img/korea.jpg" srcset="./img/korea@2x.jpg 2x, ./img/korea@3x.jpg 3x, ./img/korea@4x.jpg 4x">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./img/america.jpg" srcset="./img/america@2x.jpg 2x, ./img/america@3x.jpg 3x, ./img/america@4x.jpg 4x">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./img/japen.jpg" srcset="./img/japen@2x.jpg 2x, ./img/japen@3x.jpg 3x, ./img/japen@4x.jpg 4x">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./img/china.jpg" srcset="./img/china@2x.jpg 2x, ./img/china@3x.jpg 3x, ./img/china@4x.jpg 4x">
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      $(function() {
+        // 셀렉트
+        $("div.list-unstyled > a").click(function(e) {
+          e.preventDefault();
+
+          $(this).prev("ul").toggle();
+          return false;
+        });
+        $("div.list-unstyled > ul > li").click(function() {
+          $(this).parent().hide().parent("div.list-unstyled").children("a").text($(this).text());
+          $(this).prependTo($(this).parent());
+        });
+      });
+    </script>
+
+
+
+
+
+    </body>
+
+
+    </html>

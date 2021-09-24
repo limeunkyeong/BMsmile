@@ -1,0 +1,86 @@
+<html>
+
+  <head>
+    <title>BMSMILE</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="비엠스마일">
+    <meta property="og:description" content="비엠스마일">
+    <link rel="icon" type="image/png" href="./img/og.png">
+
+    <meta name="description" content="비엠스마일 회사소개" />
+    <meta name="keywords" content="비엠스마일,회사소개,포트폴리오,강아지기업" />
+    <meta name="author" content="임은경" />
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="./css/layout.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="./css/style.css" /> -->
+    <link rel="stylesheet" type="text/css" href="./css/common.css" />
+    <link rel="stylesheet" type="text/css" href="./css/font.css" />
+
+    <!-- 슬라이드 -->
+    <link rel="stylesheet" type="text/css" href="./css/swiper.css" />
+    <script type="text/javascript" src="./js/swiper.min.js"></script>
+    <script type="text/javascript" src="./js/swiper.min.js.map"></script>
+  </head>
+
+  <body>
+    <section id="intro">
+      <a href="./index.html">
+        <div class="intro01">
+          <img src="./img/cat.png" alt="고양이" class="cat">
+          <img src="./img/dog.png" alt="강아지" class="dog">
+        </div>
+        <div class="intro02">
+          <img src="./img/intro02.gif" alt="인트로 강아지고양이">
+        </div>
+        <div class="intro03">
+          <img src="./img/intro.gif" alt="인트로 로고">
+        </div>
+
+      </a>
+    </section>
+
+
+<script>
+    $(function() {
+      $("body").animate({
+        opacity: 1
+      });
+
+    setTimeout("location.href='./index.html'",9000);
+
+    setTimeout(show01,2000);
+    function show01(){
+      $('.intro01').hide();
+    }
+
+    setTimeout(show02,2100);
+    function show02(){
+      $('.intro02').show();
+      setTimeout(show02_1,1300);
+      function show02_1(){
+        $('.intro02').fadeOut(1000);
+      }
+    }
+    //
+    // setTimeout(show03,3000);
+    // function show03(){
+    //   $('.intro03').fadeIn(300);
+    // }
+
+
+
+    });
+</script>
+
+  </body>
+
+
+</html>

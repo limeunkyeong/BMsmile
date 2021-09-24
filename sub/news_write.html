@@ -1,0 +1,389 @@
+<html>
+
+  <head>
+    <title>BMSMILE</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta name="description" content="비엠스마일 회사소개" />
+    <meta name="keywords" content="비엠스마일,회사소개,포트폴리오,강아지기업" />
+    <meta name="author" content="임은경" />
+    <link rel="icon" type="image/png" href="../img/og.png">
+
+    <meta name="description" content="검색결과에표시되는문자" />
+    <meta name="keywords" content="키워드" />
+    <meta name="author" content="저작자" />
+
+    <script src="../js/jquery-3.6.0.min.js"></script>
+
+    <script src="../ckeditor/ckeditor.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../css/layout.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../css/font.css" />
+
+
+  </head>
+
+  <body>
+    <!--********************* 헤더********************************** -->
+    <header id="header" class="sub_head">
+      <h1 class="logo">
+        <a href="../index.html">
+          <img src="../img/logo.png" srcset="../img/logo@2x.png 2x, ../img/logo@3x.png 3x, ../img/logo@4x.png 4x">
+        </a>
+      </h1>
+      <div class="menu">
+        <ul>
+          <li class="menu_story"><a href="../index.html">기업이야기</a></li>
+          <li class="menu_promise"><a href="../sub/promise.html">약속</a></li>
+          <li class="menu_career"><a href="../sub/career.html">채용</a></li>
+          <li class="menu_news on"><a href="../sub/news.html">뉴스</a></li>
+          <li class="unberline"></li>
+        </ul>
+      </div>
+      <a class="menu-trigger" href="#">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+    </header>
+
+    <script>
+      $(document).ready(function() {
+        // 헤더 메뉴 아래 밑줄
+
+        $('#header ul li a').mouseenter(function() {
+            var pointer = $(".unberline");
+            var thisleft = $(this).position().left;
+            var pointerWidth = $(this).outerWidth();
+
+            pointer.stop().animate({
+              left: thisleft,
+              width: pointerWidth
+            }, 300);
+
+          })
+          .mouseleave(function() {
+            var pointer = $(".unberline");
+            // 현재페이지 표시
+            var pageA = $(".menu_news a");
+            var pointerWidth = pageA.outerWidth();
+            var thisleft = pageA.position().left;
+
+            pointer.stop().animate({
+              left: thisleft,
+              width: pointerWidth
+            }, 300);
+
+          })
+        $(".menu_news a").trigger('mouseenter');
+
+
+        // 스크롤 시 css바뀜
+        $(window).scroll(function() {
+          var headHeight = $("#header").height();
+          var mainPadding = $("#main").outerHeight();
+
+          if ($(this).scrollTop() > 10) {
+            $("#sub").css({
+              paddingTop: mainPadding
+            });
+            $("#header").addClass('on');
+          } else {
+            $("#sub").css({
+              paddingTop: 0
+            });
+            $("#header").removeClass('on');
+          }
+        });
+
+        // 화면 사이즈 바뀔때 밑줄 크기 바뀜
+        $(window).resize(function() {
+
+          var pointer = $(".unberline");
+          var hasOn = $("#header ul .on");
+          var pointerWidth = $(hasOn).outerWidth();
+          var thisleft = hasOn.position().left;
+
+
+          pointer.stop().animate({
+            left: thisleft,
+            width: pointerWidth
+          }, 300);
+        });
+
+        // 햄버거
+        var burger = $('.menu-trigger');
+
+        burger.each(function(index) {
+          var $this = $(this);
+
+          $this.on('click', function(e) {
+            e.preventDefault();
+            $(this).toggleClass('active');
+            if (burger.hasClass("active")) {
+              $("#header .menu").stop().animate({
+                right: 0
+              });
+            } else {
+              $("#header .menu").stop().animate({
+                right: '-350px'
+              });
+            }
+          });
+        });
+      })
+
+    </script>
+    <!--********************************** 헤더 끝 **********************************-->
+
+
+
+
+
+
+
+
+
+    <!--********************************** 뉴스 **********************************-->
+    <section id="sub">
+      <div class="news">
+        <article class="sub_title_include">
+          <div class="image">
+            <h2>news</h2>
+            <img src="../img/news_gif.gif" alt="신문보는 고양이 강아지">
+          </div>
+        </article>
+
+        <article class="news_write">
+          <div class="mix_wrapper">
+            <div class="wrap">
+              <table class="news_detail_table">
+                <thead>
+                  <tr>
+                    <th>제목</th>
+                    <td colspan="2" class="text_left event">
+                      <div class="list-unstyled">
+                        <ul class="absol">
+                          <li><a href="#">공지사항</a></li>
+                          <li><a href="#">이벤트</a></li>
+                          <li><a href="#">언론보도</a></li>
+                        </ul>
+                        <a href="#">분류</a>
+                      </div>
+                      <input type="text">
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>작성자</th>
+                    <td><input type="text"></td>
+                    <td><div class="todey"></div></td>
+                  </tr>
+                </thead>
+              </table>
+
+              <textarea id="editor1" name="editor1" data-sample-short></textarea>
+              <div class="pazing">
+                <a href="./news_write.html" class="write">글쓰기</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- 팝업 -->
+      <div id="popup">
+        <div class="popup terms_popup">
+          <div class="pop_title">이용약관<span><img src="../img/close.png" srcset="../img/close@2x.png 2x, ../img/close@3x.png 3x, ../img/close@4x.png 4x"></span></div>
+          <div class="text">
+            제1장 총칙<br><br>
+            제1조(목적) 이 약관은 회사가 온라인으로 제공하는 디지털콘텐츠(이하 "콘텐츠"라고 한다) 및 제반서비스의 이용과 관련하여 회사와 이용자와의 권리, 의무 및 책임사항 등을 규정함을 목적으로 합니다.<br><br>
+            제2조(정의) 이 약관에서 사용하는 용어의 정의는 다음과 같습니다.<br><br>
+            1. "회사"라 함은 "콘텐츠" 산업과 관련된 경제활동을 영위하는 자로서 콘텐츠 및 제반서비스를 제공하는 자를 말합니다.<br><br>
+            2. "이용자"라 함은 "회사"의 사이트에 접속하여 이 약관에 따라 "회사"가 제공하는 "콘텐츠" 및 제반서비스를 이용하는 회원 및 비회원을 말합니다.<br><br>
+            3. "회원"이라 함은 "회사"와 이용계약을 체결하고 "이용자" 아이디(ID)를 부여받은 "이용자"로서 "회사"의 정보를 지속적으로 제공받으며 "회사"가 제공하는 서비스를 지속적으로 이용할 수 있는 자를 말합니다.<br><br>
+            4. "비회원"이라 함은 "회원"이 아니면서 "회사"가 제공하는 서비스를 이용하는 자를 말합니다.<br><br>
+            5. "콘텐츠"라 함은 정보통신망이용촉진 및 정보보호 등에 관한 법률 제2조 제1항 제1호의 규정에 의한 정보통신망에서 사용되는 부호·문자·음성·음향·이미지 또는 영상 등으로 표현된 자료 또는 정보로서, 그 보존 및 이용에 있어서 효용을 높일 수 있도록 전자적 형태로 제작 또는 처리된 것을 말합니다.<br><br>
+            6. "아이디(ID)"라 함은 "회원"의 식별과 서비스이용을 위하여 "회원"이 정하고 "회사"가 승인하는 문자 또는 숫자의 조합을 말합니다.<br><br>
+            7. "비밀번호(PASSWORD)"라 함은 "회원"이 부여받은 "아이디"와 일치되는 "회원"임을 확인하고 비밀보호를 위해 "회원" 자신이 정한 문자 또는 숫자의 조합을 말합니다.<br><br>
+            제3조(신원정보 등의 제공) "회사"는 이 약관의 내용, 상호, 대표자 성명, 영업소 소재지 주소(소비자의 불만을 처리할 수 있는 곳의 주소를 포함), 전화번호, 모사전송번호, 전자우편주소, 사업자등록번호, 통신판매업 신고번호 및 개인정보관리책임자 등을 이용자가 쉽게 알 수 있도록 온라인 서비스초기화면에 게시합니다. 다만, 약관은 이용자가 연결화면을 통하여 볼 수 있도록 할 수 있습니다.<br><br>
+            제4조(약관의 게시 등) ① "회사"는 이 약관을 "회원"이 그 전부를 인쇄할 수 있고 거래과정에서 해당 약관의 내용을 확인할 수 있도록 기술적 조치를 취합니다.<br><br>
+            ② "회사"는 "이용자"가 "회사"와 이 약관의 내용에 관하여 질의 및 응답할 수 있도록 기술적 장치를 설치합니다.<br><br>
+            ③ "회사"는 "이용자"가 약관에 동의하기에 앞서 약관에 정하여져 있는 내용 중 청약철회, 환불조건 등과 같은 중요한 내용을 이용자가 쉽게 이해할 수 있도록 별도의 연결화면 또는 팝업화면 등을 제공하여 "이용자"의 확인을 구합니다.<br><br>
+            제5조(약관의 개정 등) ① "회사"는 온라인 디지털콘텐츠산업 발전법, 전자상거래 등에서의 소비자보호에 관한 법률, 약관의 규제에 관한 법률 등 관련법을 위배하지 않는 범위에서 이 약관을 개정할 수 있습니다.<br><br>
+            ② "회사"가 약관을 개정할 경우에는 적용일자 및 개정사유를 명시하여 현행약관과 함께 서비스초기화면에 그 적용일자 7일 이전부터 적용일 후 상당한 기간동안 공지하고, 기존회원에게는 개정약관을 전자우편주소로 발송합니다.<br><br>
+            ③ "회사"가 약관을 개정할 경우에는 개정약관 공지 후 개정약관의 적용에 대한 "이용자"의 동의 여부를 확인합니다. "이용자"가 개정약관의 적용에 동의하지 않는 경우 "회사" 또는 "이용자"는 콘텐츠 이용계약을 해지할 수 있습니다. 이때, "회사"는 계약해지로 인하여 "이용자"가 입은 손해를 배상합니다.<br><br>
+            제6조(약관의 해석) 이 약관에서 정하지 아니한 사항과 이 약관의 해석에 관하여는 온라인 디지털콘텐츠산업 발전법, 전자상거래 등에서의 소비자보호에 관한 법률, 약관의 규제에 관한 법률, 문화체육관광부장관이 정하는 디지털콘텐츠이용자보호지침, 기타 관계법령 또는 상관례에 따릅니다.<br><br>
+          </div>
+        </div>
+
+        <div class="popup privacy_popup">
+          <div class="pop_title">개인정보처리방침<span><img src="../img/close.png" srcset="../img/close@2x.png 2x, ../img/close@3x.png 3x, ../img/close@4x.png 4x"></span></div>
+          <div class="text">
+            개인정보보호위원회가 취급하는 모든 개인정보는 관련 법령에 근거하여 수집 · 보유 및 처리되고 있습니다. 「개인정보보호법」은 이러한 개인정보의 취급에 대한 일반적 규범을 제시하고 있으며, 개인정보보호위원회는 이러한 법령의 규정에 따라 수집 · 보유 및 처리하는 개인정보를 공공업무의 적절한 수행과 이용자의 권익을 보호하기 위해 적법하고 적정하게 취급할 것입니다.<br><br>
+
+            또한, 개인정보보호위원회는 관련 법령에서 규정한 바에 따라 보유하고 있는 개인정보에 대한 열람, 정정·삭제, 처리정지 요구 등 이용자의 권익을 존중하며, 이용자는 이러한 법령상 권익의 침해 등에 대하여 행정심판법에서 정하는 바에 따라 행정심판을 청구할 수 있습니다.<br><br>
+
+            개인정보보호위원회는 개인정보보호법 제 30조에 따라 정보주체의 개인정보 보호 및 권익을 보호하고 개인정보와 관련한 이용자의 고충을 원활하게 처리할 수 있도록 다음과 같은 개인정보 처리방침을 수립 · 공개하고 있습니다.<br><br>
+          </div>
+        </div>
+
+        <div class="popup collection_popup">
+          <div class="pop_title">이메일 무단수집거부<span><img src="../img/close.png" srcset="../img/close@2x.png 2x, ../img/close@3x.png 3x, ../img/close@4x.png 4x"></span></div>
+          <div class="text">
+            개인정보처리자는 이 법에 따른 개인정보의 처리에 대하여 정보주체(제5항에 따른 법정대리인을 포함한다. <br><br>이하 이 조에서 같다)의 동의를 받을 때에는 각각의 동의 사항을 구분하여 정보주체가 이를 명확하게 인지할 수 있도록 알리고 각각 동의를 받아야 한다.<br><br>
+            개인정보처리자는 제15조제1항제1호, 제17조제1항제1호, 제23조제1호 및 제24조제1항제1호에 따라 개인정보의 처리에 대하여 정보주체의 동의를 받을 때에는 정보주체와의 계약 체결 등을 위하여 정보주체의 동의 없이 처리할 수 있는 개인정보와 정보주체의 동의가 필요한 개인정보를 구분하여야 한다. <br>이 경우 동의 없이 처리할 수 있는 개인정보라는 입증책임은 개인정보처리자가 부담한다.<br><br>
+            개인정보처리자는 정보주체에게 재화나 서비스를 홍보하거나 판매를 권유하기 위하여 개인정보의 처리에 대한 동의를 받으려는 때에는 정보주체가 이를 명확하게 인지할 수 있도록 알리고 동의를 받아야 한다.<br><br>
+            개인정보처리자는 정보주체가 제2항에 따라 선택적으로 동의할 수 있는 사항을 동의하지 아니하거나 제3항 및 제18조제2항제1호에 따른 동의를 하지 아니한다는 이유로 정보주체에게 재화 또는 서비스의 제공을 거부하여서는 아니 된다.<br><br>
+            개인정보처리자는 만 14세 미만 아동의 개인정보를 처리하기 위하여 이 법에 따른 동의를 받아야 할 때에는 그 법정대리인의 동의를 받아야 한다. <br>이 경우 법정대리인의 동의를 받기 위하여 필요한 최소한의 정보는 법정대리인의 동의 없이 해당 아동으로부터 직접 수집할 수 있다.<br><br>
+            제1항부터 제5항까지에서 규정한 사항 외에 정보주체의 동의를 받는 세부적인 방법 및 제5항에 따른 최소한의 정보의 내용에 관하여 필요한 사항은 개인정보의 수집매체 등을 고려하여 대통령령으로 정한다.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <script>
+      // 에디터
+      $(function() {
+
+        $("body").animate({
+          opacity: 1
+        }, 800);
+
+        CKEDITOR.replace('editor1', {
+          height: 500,
+          uiColor: '#d8eef9',
+          removeButtons: 'PasteFromWord'
+        });
+        // 팝업
+        $(".footer_top li").click(function(e) {
+          e.preventDefault();
+          if ($(this).hasClass("terms")) {
+            $(".terms_popup").show();
+          } else if ($(this).hasClass("privacy")) {
+            $(".privacy_popup").show();
+          } else {
+            $(".collection_popup").show();
+          }
+
+        });
+        $("#popup .pop_title span").click(function() {
+          $(this).parents(".popup").hide();
+        });
+
+
+//날짜
+        var today = new Date();
+        var year = today.getFullYear();
+        var month = ('0' + (today.getMonth() + 1)).slice(-2);
+        var day = ('0' + today.getDate()).slice(-2);
+
+        $(".todey").html(year + "-" + month + "-" + day);
+
+      });
+
+    </script>
+
+
+    <!-- **********************************뉴스*끝********************************* -->
+
+
+
+
+
+
+    <!-- **********************************푸터********************************** -->
+
+    <footer id="footer">
+      <ul class="footer_top">
+        <li class="terms"><a href="#">이용약관</a></li>
+        <li class="privacy"><a href="#">개인정보처리방침</a></li>
+        <li class="collection"><a href="#">이메일 무단수집거부</a></li>
+      </ul>
+      <div class="footer_bottom">
+        <div class="wrap">
+          <div class="float_left">
+            <p>Follow us</p>
+            <ul>
+              <li>
+                <img src="../img/sns_instar.png" srcset="../img/sns_instar@2x.png 2x, ../img/sns_instar@3x.png 3x, ../img/sns_instar@4x.png 4x">
+              </li>
+              <li>
+                <img src="../img/sns_facebook.png" srcset="../img/sns_facebook@2x.png 2x, ../img/sns_facebook@3x.png 3x, ../img/sns_facebook@4x.png 4x">
+              </li>
+              <li>
+                <img src="../img/sns_youtube.png" srcset="../img/sns_youtube@2x.png 2x, ../img/sns_youtube@3x.png 3x, ../img/sns_youtube@4x.png 4x">
+              </li>
+            </ul>
+          </div>
+          <div class="text">
+            Company Name : BMSMILE Co., Ltd. 사업자등록번호 : 394-81-01000<br>
+            TEL : 010-5032-0316 주소 : 서울시 노원구 공릉동 EMAIL: ajfod126@gmail.com<br>
+            ⓒLim eunkyeong 2021.08
+          </div>
+          <div class="float_right">
+            <div class="list-unstyled">
+              <ul class="absol">
+                <li><a href="https://www.pethroom.com/" target="_blank">PETHROOM</a></li>
+                <li><a href="https://www.youtube.com/channel/UCPEBG_GeBhoZb0dvB0WjJlw/about" target="_blank">BOSS AND ALEX</a></li>
+              </ul>
+              <a href="#">FAMILY SITE</a>
+            </div>
+            <ul class="translation">
+              <li>
+                <a href="#">
+                  <img src="../img/korea.jpg" srcset="../img/korea@2x.jpg 2x, ../img/korea@3x.jpg 3x, ../img/korea@4x.jpg 4x">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="../img/america.jpg" srcset="../img/america@2x.jpg 2x, ../img/america@3x.jpg 3x, ../img/america@4x.jpg 4x">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="../img/japen.jpg" srcset="../img/japen@2x.jpg 2x, ../img/japen@3x.jpg 3x, ../img/japen@4x.jpg 4x">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="../img/china.jpg" srcset="../img/china@2x.jpg 2x, ../img/china@3x.jpg 3x, ../img/china@4x.jpg 4x">
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      $(function() {
+        // 셀렉트
+        $("div.list-unstyled > a").click(function(e) {
+          e.preventDefault();
+
+          $(this).prev("ul").toggle();
+          return false;
+        });
+        $("div.list-unstyled > ul > li").click(function() {
+          $(this).parent().hide().parent("div.list-unstyled").children("a").text($(this).text());
+          $(this).prependTo($(this).parent());
+        });
+      });
+
+    </script>
+
+
+
+
+
+  </body>
+
+
+</html>
